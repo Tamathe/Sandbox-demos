@@ -1,0 +1,95 @@
+name: Submit App
+description: Submit your app for listing in the UK Sandbox /explore page
+title: "Submit: [App Name]"
+labels: ["submission"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: App name
+      description: Shown on the /explore card. Max ~40 characters.
+      placeholder: "Study Room Finder"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One sentence. Shown on the /explore card. Lead with a verb. Max 120 characters.
+      placeholder: "Find open study rooms across campus in real time."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Build type
+      options:
+        - standalone-site
+        - mini-app
+        - api-integration
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Live URL or repository
+      description: For standalone sites and integrations, a live URL. For mini-apps, your fork/branch.
+      placeholder: "https://myapp.vercel.app"
+    validations:
+      required: true
+
+  - type: input
+    id: email
+    attributes:
+      label: Your @uky.edu email
+      placeholder: "jsmith@uky.edu"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Display name
+      description: Shown as "by [name]" on the /explore card.
+      placeholder: "Jane Smith"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tags
+    attributes:
+      label: Tags (select all that apply)
+      options:
+        - label: productivity
+        - label: courses
+        - label: research
+        - label: health
+        - label: events
+        - label: housing
+        - label: social
+        - label: tools
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot or screen recording
+      description: Drag and drop an image here. Required — submissions without a screenshot will be closed.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: My app is live and working at the URL above
+          required: true
+        - label: My description is under 120 characters and leads with a verb
+          required: true
+        - label: I'm not harvesting credentials or impersonating Sandbox UI
+          required: true
+        - label: I have a @uky.edu email address
+          required: true
